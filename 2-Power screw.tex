@@ -4,54 +4,59 @@
 \usepackage{xstring}
 % \usepackage{siunitx} % To set engineering notation
 \usepackage{graphicx} % For including figures
+% Set engineering notation
 \providecommand{\sci}[1]{\protect\ensuremath{\times 10^{\StrSubstitute[0]{#1}{e}{}}}}
 \setlength{\parindent}{0pt} % Set paragraph indentation to zero
 
 \begin{document}
 
-\textbf{Tutorial 2: Power Screw}
+\underline{\textbf{\large Tutorial 2: Power Screw}}
+\vspace{10pt}
+
+\textbf{Theory}
+
+\begin{enumerate}
+    \item What is a power screw?
+    \item What is the purpose of a power screw?
+    \item Draw and make a detail sketch of a square thread, Acme and Modified thread. Explain the difference between these threads and its applications.
+\end{enumerate}
+
+\textbf{Calculations}
 \vspace{10pt}
 
 \textbf{Question 1}
 
-Figure Q1 shows a c-clamp used to clamp wooden blocks in a workshop. The clamp provides a compressive stress of 5.85 MPa to two blocks that are being glued together. The threaded screw is asingle start square thread having nominal diameter of 16 mm and advances 2 mm per turn. The coefficient of friction between the screw thread and the supporting threads in the frame is f = 0.25.
-Determine:
+A screw jack has a triple threaded Acme power screw of M30x4, is used to lift a load of a 6kN. Determine;
+
 \begin{enumerate}[label=(\roman*)]
-    \item the root diameter, dr and mean diameter, dm of the screw
-    \item the minimum force P necessary to tighten the clamp
-    \item the power if the screw travel at a speed of 2 mm/s, and
-    \item State the minimum value of coefficient of friction for the screw to be overhauled
+    \item The screw lead, mean diameter and helix angle
+    \item The screw torque required to move the load up
+    \item Is the screw overhauling
+    \item The efficiency of the jack, if collar friction is used
+    \item The length of a crank required if F=150N is exerted by an operator
 \end{enumerate}
 
+Given: f=0.12, fc=0.09 and dc=40mm
+
+\vspace{10pt}
 \textbf{Example Solution}
 \vspace{10pt}
 
-
-
-\textbf{Question 1-Long}
-
-
-\textbf{Example Solution}
-\vspace{10pt}
-
-$n = 1$(single start)\\
+$n = 3$(triple thread)\\
 $\alpha = 14.5$ (Acme thread)\\
-$diameter,D = 12.5$\\
-$pitch,p = 1.5$\\
-$Fc = 900$\\
-$d_c = 13.5$\\
-$f = 0.3$\\
-$f_c = 0.3$\\
-$v=95mm/s$
+$diameter,D = 30mm$\\
+$pitch,p = 4$\\
+$Load = 6000N$\\
+$f = 0.12$\\
+$f_c = 0.09$\\
+$d_c = 40mm$\\
 \vspace{10pt}
 
-% $$ \tan\lambda = \frac{L}{\pi d_m} $$
-
-i - Find lead first,
+i-Find lead first,
 \begin{equation*}
     \begin{aligned}
     Lead, L &=np\\
-    &=2\times1.5mm = 3mm/turn    
+    &=3\times4mm = 12mm/turn    
     \end{aligned}
 \end{equation*}
 
@@ -59,83 +64,83 @@ Find mean diameter,
 \begin{equation*}
     \begin{aligned}
     d_m &= \frac {D+(D-p)}{2}\\  
-    &= \frac {12+(12-1.5)}{2}\\ 
-    &= 11.25mm
+    &= \frac {30+(30-4)}{2}\\ 
+    &= 28mm
     \end{aligned}
 \end{equation*}
 
-Find helix angle, 
+Find helix angle,
 \begin{equation*}
     \begin{aligned}
-    \tan\lambda = \frac{L}{\pi d_m}\\
-    &=\frac{3mm}{\pi 11.25mm} \\
-    &=0.0845\\
-    \lambda &= \tan^{-1}(0.0845)\\
-    &=4.84^{\circ}
+    \tan\lambda &= \frac{L}{\pi d_m}\\
+    &= \frac{12mm}{\pi 28mm} \\
+    &=0.136\\
+    \lambda &= \tan^{-1}(0.136)\\
+    &=7.768^{\circ}
     \end{aligned}
 \end{equation*}
 
-ii - Force on screw
-
-\begin{equation*}
-    \begin{aligned}
-    +\circlearrowleft \sum M_A =0\\  
-    -900(0.2)-F_{screw}(0.2) &=0\\ 
-    F_{screw} &= -900N
-    \end{aligned}
-\end{equation*}
-
-Negative sign mean opposite in FBD. Use absolute value for force $F_{screw}= 900N$.
-
-Axial stress
-
-\begin{equation*}
-    \begin{aligned}
-    \sigma &= \frac{F}{A}\\
-    &=\frac{900N}{\pi \left(\frac{d_r^2}{4}\right)}\\
-    \end{aligned}
-\end{equation*}
-
-\begin{equation*}
-    \begin{aligned}
-    d_r &= d-p\\
-    &= 12-1.5=10.5mm
-    \end{aligned}
-\end{equation*}
-
-\begin{equation*}
-    \begin{aligned}
-    &=\frac{900N}{\pi \left(\frac{10.5^2}{4}\right)}\\
-    &=\frac{900N}{86.59} = 10.4 MPa
-    \end{aligned}
-\end{equation*}
-
-iii - Torque to lift the load
-
+ii-Find torque to lift the load,
 \begin{equation*}
     \begin{aligned}
     T_u = \frac{Wd_m}{2} \frac{f+\cos\alpha_n \tan\lambda}{\cos\alpha_n + f\tan\lambda} + \frac{Wf_c d_c}{2}
     \end{aligned}
 \end{equation*}
 
-Convert $\alpha \rightarrow \alpha_n$ to radians,
+Find $\alpha_n$
 \begin{equation*}
     \begin{aligned}
     \tan \alpha_n &= \cos \lambda \tan \alpha\\
-     &= \cos 4.84 \tan 14.5\\
-    &= 14.45^{\circ}
+     &= \cos 7.768 \tan 14.5\\
+    &= 14.37^{\circ}
     \end{aligned}
 \end{equation*}
 
+Substitute known values into torque to lift the load equation,
 \begin{equation*}
     \begin{aligned}
-    T_u = \frac{900(11.25\sci{e-3})}{2} \frac{0.3+\cos(14.45) \tan(4.84)}{\cos(14.45) + f\tan(4.84)} + \frac{900(0.15)(22\sci{e-3})}{2} \\
-    T_u=3.53 Nm
+    T_u &= \frac{Wd_m}{2} \frac{f+\cos\alpha_n \tan\lambda}{\cos\alpha_n + f\tan\lambda} + \frac{Wf_c d_c}{2} \\
+    &= \frac{6000(28\sci{e-3})}{2} \frac{0.12+\cos(14.37) \tan(7.768)}{\cos(14.37) + 0.12\tan(7.768)} + \frac{6000(0.09)(40\sci{e-3})}{2} \\
+    &= 22.3 \sci{e3} Nm
     \end{aligned}
 \end{equation*}
 
+iii-Check if the screw is overhauling,
 
+Screw overhaul when,
+\begin{equation*}
+    \begin{aligned}
+    f &\le \cos \alpha_n \tan \lambda \\
+    0.12 &\le \cos(14.37) \tan(7.768)\\
+    0.12 &\le 0.136\\
+    \end{aligned}
+\end{equation*}
 
+$\cos \alpha_n \tan \lambda$ is greater than $f$, therefore the screw is overhauling.
+
+OR, can check using torque to lower the load. If the value is negative, it will overhaul.
+$$T_d = \frac{Wd_m}{2} \frac{f-\cos\alpha_n \tan\lambda}{\cos\alpha_n + f\tan\lambda} + \frac{Wf_c d_c}{2}$$
+
+$T_d=-1.02kN$, which is negative, therefore the screw is overhauling.
+
+iv- Find efficiency of the jack, if collar friction is used,
+\begin{equation*}
+    \begin{aligned}
+    e &=\frac{d_m \tan \lambda}{d_m \frac{f+\cos\alpha_n \tan\lambda}{\cos\alpha_n - f\tan\lambda}+d_c f_c} \\
+    &=\frac{28\sci{e-3} \tan(7.768)}{28\sci{e-3} \frac{0.12+\cos(14.37) \tan(7.768)}{\cos(14.37) - 0.12\tan(7.768)}+40\sci{e-3} (0.09)} \\
+    &=0.47
+    \end{aligned}
+\end{equation*}
+
+v- Find the length of a crank required if F=150N is exerted by an operator,
+\begin{equation*}
+    \begin{aligned}
+    T_u &= F \cdot r\\
+    22.3\sci{e3} &= 150 \cdot r\\
+    r &= \frac{22.3\sci{e3}}{150}\\
+    &=148.7 mm
+    \end{aligned}
+\end{equation*}
 
 \newpage
 \textbf{Question 2}
@@ -216,7 +221,7 @@ From $\tan\lambda$ equation,
     \end{aligned}
 \end{equation*}
 
-Convert $\alpha \rightarrow \alpha_n$ to radians,
+Find $\alpha_n$,
 \begin{equation*}
     \begin{aligned}
     \tan \alpha_n &= \cos \lambda \tan \alpha\\
@@ -253,5 +258,24 @@ Calculat the force at B when force at E changed
 \end{equation*}
 
 Force at C = Force at B = 336.6 N
+
+\newpage
+\textbf{Question 3}
+A screw of M10x1.5 is used as a lead screw for a machine with a torque of 10 Nm travelled linearly at 10mm/s. Determine;
+\begin{enumerate}[label=(\roman*)]
+    \item the mean diameter of the screw.
+    \item angular speed of the screw in rpm.
+    \item power carried by the screw.
+\end{enumerate}
+
+\newpage
+\textbf{Question 4}
+
+The bench hold-down clamp is being used to clamp two boards together while they are being glued as shown in Figure Q1(c). The clamp consists of a screw having single square threads of M12 X 2 and coefficient of friction in the screw thread is taken as 0.2. The screw producing maximum power of 35 W when moving at 2mm/s axially.
+
+\newpage
+\textbf{Question 5}
+
+The screw is a double-start ACME thread of M12x 1.5. The clamping force exerted at G is FG=900 N. The mean diameter of the collar is dc = 22 mm. Coefficients of friction for screw and collar are estimated as f = 0.3 and fc = 0.15 respectively. The screw will travel axially at 95 mm/s. Find,
 
 \end{document}
