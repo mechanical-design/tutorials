@@ -1,6 +1,10 @@
-\documentclass[a4paper]{article}
+\documentclass[a4paper, fleqn]{article}
 \usepackage{enumitem}
-\usepackage{amsmath,amsthm,amssymb}
+\usepackage{amsmath, amssymb}
+\usepackage{xstring}
+% \usepackage{siunitx} % To set engineering notation
+\usepackage{graphicx} % For including figures
+\providecommand{\sci}[1]{\protect\ensuremath{\times 10^{\StrSubstitute[0]{#1}{e}{}}}}
 \setlength{\parindent}{0pt} % Set paragraph indentation to zero
 
 \begin{document}
@@ -20,11 +24,121 @@ Determine:
 \end{enumerate}
 
 \textbf{Example Solution}
+\vspace{10pt}
 
-$${{d\,\bar{z}\,\ln\,m\,\mathrm{a}\qquad\rho\,z^{*}\,\delta^{<}\,\bar{z}^{*}\,\bar{z}^{*}\,\bar{z}^{*}\,\bar{z}^{*}\,}}$$
+
+
+\textbf{Question 1-Long}
+
+
+\textbf{Example Solution}
+\vspace{10pt}
+
+$n = 1$(single start)\\
+$\alpha = 14.5$ (Acme thread)\\
+$diameter,D = 12.5$\\
+$pitch,p = 1.5$\\
+$Fc = 900$\\
+$d_c = 13.5$\\
+$f = 0.3$\\
+$f_c = 0.3$\\
+$v=95mm/s$
+\vspace{10pt}
+
+% $$ \tan\lambda = \frac{L}{\pi d_m} $$
+
+i - Find lead first,
+\begin{equation*}
+    \begin{aligned}
+    Lead, L &=np\\
+    &=2\times1.5mm = 3mm/turn    
+    \end{aligned}
+\end{equation*}
+
+Find mean diameter,
+\begin{equation*}
+    \begin{aligned}
+    d_m &= \frac {D+(D-p)}{2}\\  
+    &= \frac {12+(12-1.5)}{2}\\ 
+    &= 11.25mm
+    \end{aligned}
+\end{equation*}
+
+Find helix angle, 
+\begin{equation*}
+    \begin{aligned}
+    \tan\lambda = \frac{L}{\pi d_m}\\
+    &=\frac{3mm}{\pi 11.25mm} \\
+    &=0.0845\\
+    \lambda &= \tan^{-1}(0.0845)\\
+    &=4.84^{\circ}
+    \end{aligned}
+\end{equation*}
+
+ii - Force on screw
+
+\begin{equation*}
+    \begin{aligned}
+    +\circlearrowleft \sum M_A =0\\  
+    -900(0.2)-F_{screw}(0.2) &=0\\ 
+    F_{screw} &= -900N
+    \end{aligned}
+\end{equation*}
+
+Negative sign mean opposite in FBD. Use absolute value for force $F_{screw}= 900N$.
+
+Axial stress
+
+\begin{equation*}
+    \begin{aligned}
+    \sigma &= \frac{F}{A}\\
+    &=\frac{900N}{\pi \left(\frac{d_r^2}{4}\right)}\\
+    \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+    \begin{aligned}
+    d_r &= d-p\\
+    &= 12-1.5=10.5mm
+    \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+    \begin{aligned}
+    &=\frac{900N}{\pi \left(\frac{10.5^2}{4}\right)}\\
+    &=\frac{900N}{86.59} = 10.4 MPa
+    \end{aligned}
+\end{equation*}
+
+iii - Torque to lift the load
+
+\begin{equation*}
+    \begin{aligned}
+    T_u = \frac{Wd_m}{2} \frac{f+\cos\alpha_n \tan\lambda}{\cos\alpha_n + f\tan\lambda} + \frac{Wf_c d_c}{2}
+    \end{aligned}
+\end{equation*}
+
+Convert $\alpha \rightarrow \alpha_n$ to radians,
+\begin{equation*}
+    \begin{aligned}
+    \tan \alpha_n &= \cos \lambda \tan \alpha\\
+     &= \cos 4.84 \tan 14.5\\
+    &= 14.45^{\circ}
+    \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+    \begin{aligned}
+    T_u = \frac{900(11.25\sci{e-3})}{2} \frac{0.3+\cos(14.45) \tan(4.84)}{\cos(14.45) + f\tan(4.84)} + \frac{900(0.15)(22\sci{e-3})}{2} \\
+    T_u=3.53 Nm
+    \end{aligned}
+\end{equation*}
+
+
+
 
 \newpage
-\textbf{Q2}
+\textbf{Question 2}
 
 The clamp assembly as shown in Figure Q2 consists of member AB and AC, which are pin connected at A. The clamp works by rotating a single start ACME thread $(\alpha=14.5^{\circ})$ with the size of 12.5 mm and pitch of 2.5 mm. At this instant, the compressive force, Fc on the wood between B and C is 180 N. The collar at the assembly has a mean diameter of 13.5 mm. Assume all the friction coefficient between all surface contracts is 0.3. Determine:
 
@@ -39,5 +153,105 @@ The clamp assembly as shown in Figure Q2 consists of member AB and AC, which are
 
 \textbf{Example Solution}
 
+Given:
+$n = 1$(single start)\\
+$\alpha = 14.5$ (Acme thread)\\
+$diameter,D = 12.5$\\
+$pitch,p = 2.5$\\
+$Fc = 180$\\
+$d_c = 13.5$\\
+$f = 0.3$\\
+$f_c = 0.3$\\
+\vspace{10pt}
+
+i - Load acting at the screw, $F_E$
+\begin{equation*}
+    \begin{aligned}
+    +\circlearrowleft \sum M_A =0\\  
+    -F_E(0.03)-F_B(0.07) &=0\\ 
+    -F_E(0.2)-(180)(0.2) &=0\\ 
+    F_E &= 420  N
+    \end{aligned}
+\end{equation*}
+
+ii - Torque required to tighten the screw
+\begin{equation*}
+    \begin{aligned}
+    T_u = \frac{Wd_m}{2} \frac{f+\cos\alpha_n \tan\lambda}{\cos\alpha_n + f\tan\lambda} + \frac{Wf_c d_c}{2}
+    \end{aligned}
+\end{equation*}
+
+Find helix angle,
+\begin{equation*}
+    \begin{aligned}
+    \tan\lambda = \frac{L}{\pi d_m}\\
+    \end{aligned}
+\end{equation*}
+
+Find lead,
+\begin{equation*}
+    \begin{aligned}
+    Lead, L &=np\\
+    &=1(2.5)\\
+    &=2.5mm    
+    \end{aligned}
+\end{equation*}
+
+Find mean diameter,
+\begin{equation*}
+    \begin{aligned}
+    d_m &= \frac {D+(D-p)}{2}\\  
+    &= \frac {12.5+(12.5-2.5)}{2}\\ 
+    &= 11.25mm
+    \end{aligned}
+\end{equation*}
+
+From $\tan\lambda$ equation,
+\begin{equation*}
+    \begin{aligned}
+    \tan\lambda &= \frac{2.5mm}{\pi 11.25mm} \\
+    &=0.0707\\
+    \lambda &= \tan^{-1}(0.0707)\\
+    &=4.05^{\circ}
+    \end{aligned}
+\end{equation*}
+
+Convert $\alpha \rightarrow \alpha_n$ to radians,
+\begin{equation*}
+    \begin{aligned}
+    \tan \alpha_n &= \cos \lambda \tan \alpha\\
+     &= \cos 4.05 \tan 14.5\\
+    &= 14.45^{\circ}
+    \end{aligned} 
+\end{equation*}
+
+Insert into torque to lift the load equation,
+\begin{equation*}
+    \begin{aligned}
+    T_u &= \frac{420(11.25\sci{e-3})}{2} \frac{0.3+\cos(14.45) \tan(4.05)}{\cos(14.45) + f\tan(4.05)} + \frac{420(0.3)(13.5\sci{e-3})}{2} \\
+    &=1.77 Nm
+    \end{aligned}
+\end{equation*}
+
+iii - Maximum compressive force, Fc if allowable normal stress at the screw is 10 MPa.
+\begin{equation*}
+    \begin{aligned}
+    \sigma &= \frac{F_E}{A}\\
+    10\sci{6}&=\frac{F_E}{\pi \left(\frac{0.01^2}{4}\right)}\\
+    F_E &=785.4 N
+    \end{aligned}
+\end{equation*}
+
+Calculat the force at B when force at E changed
+\begin{equation*}
+    \begin{aligned}
+    +\circlearrowleft \sum M_A =0\\  
+    F'_E(0.03)+F'_B(0.07) &=0\\ 
+    (785.4)(0.2)+(180)(0.2) &=0\\ 
+    F'_B &= 336.6 N
+    \end{aligned}
+\end{equation*}
+
+Force at C = Force at B = 336.6 N
 
 \end{document}
