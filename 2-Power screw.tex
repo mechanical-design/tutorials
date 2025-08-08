@@ -4,6 +4,7 @@
 \usepackage{xstring}
 % \usepackage{siunitx} % To set engineering notation
 \usepackage{graphicx} % For including figures
+\graphicspath{{./figs/}} % Path to figures
 % Set engineering notation
 \providecommand{\sci}[1]{\protect\ensuremath{\times 10^{\StrSubstitute[0]{#1}{e}{}}}}
 \setlength{\parindent}{0pt} % Set paragraph indentation to zero
@@ -100,8 +101,8 @@ Substitute known values into torque to lift the load equation,
 \begin{equation*}
     \begin{aligned}
     T_u &= \frac{Wd_m}{2} \frac{f+\cos\alpha_n \tan\lambda}{\cos\alpha_n + f\tan\lambda} + \frac{Wf_c d_c}{2} \\
-    &= \frac{6000(28\sci{e-3})}{2} \frac{0.12+\cos(14.37) \tan(7.768)}{\cos(14.37) + 0.12\tan(7.768)} + \frac{6000(0.09)(40\sci{e-3})}{2} \\
-    &= 22.3 \sci{e3} Nm
+    &= \frac{6000(28\sci{e-3})}{2} \times\frac{0.12+\cos(14.37) \tan(7.768)}{\cos(14.37) - 0.12\tan(7.768)} + \frac{6000(0.09)(40\sci{e-3})}{2} \\
+    &= 33 kN
     \end{aligned}
 \end{equation*}
 
@@ -136,14 +137,19 @@ v- Find the length of a crank required if F=150N is exerted by an operator,
 \begin{equation*}
     \begin{aligned}
     T_u &= F \cdot r\\
-    22.3\sci{e3} &= 150 \cdot r\\
-    r &= \frac{22.3\sci{e3}}{150}\\
-    &=148.7 mm
+    33\sci{e3} &= 150 \cdot r\\
+    r &= \frac{33\sci{e3}}{150}\\
+    &= 0.22 m
     \end{aligned}
 \end{equation*}
 
-\newpage
 \textbf{Question 2}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{t2-q2.png}
+    \caption{Figure Q2}
+\end{figure}
 
 The clamp assembly as shown in Figure Q2 consists of member AB and AC, which are pin connected at A. The clamp works by rotating a single start ACME thread $(\alpha=14.5^{\circ})$ with the size of 12.5 mm and pitch of 2.5 mm. At this instant, the compressive force, Fc on the wood between B and C is 180 N. The collar at the assembly has a mean diameter of 13.5 mm. Assume all the friction coefficient between all surface contracts is 0.3. Determine:
 
