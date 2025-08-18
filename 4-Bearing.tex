@@ -1,0 +1,64 @@
+\documentclass[a4paper, fleqn]{article}
+\usepackage{enumitem}
+\usepackage{amsmath, amssymb}
+\usepackage{xstring}
+\usepackage{graphicx} % For including figures
+\graphicspath{{./figs/}} % Path to figures
+% Set engineering notation
+\providecommand{\sci}[1]{\protect\ensuremath{\times 10^{\StrSubstitute[0]{#1}{e}{}}}}
+\setlength{\parindent}{0pt} % Set paragraph indentation to zero
+
+\begin{document}
+
+\underline{\textbf{Tutorial 4: Bearing}}
+\vspace{10pt}
+
+% Find rating life - Take from Q2
+\textbf{Question 1}
+
+A 50 mm bore (02 series) deep groove ball bearing carries a combined load of 9kN radially and 6 kN axially at 1200 rpm. Calculate:
+
+\begin{enumerate}[label=(\roman*)]
+    \item The equivalent radial load
+    \item Rating life in hours.
+    \item Median life in hours.
+    \item The loading of a ball bearing if the expected life is increased by 25%
+\end{enumerate}
+
+Assumptions: The outer ring rotates and loads in moderate shock
+
+\vspace{10pt}
+\textbf{Example Solution}
+\vspace{10pt}
+
+
+
+\textbf{Step 1}: Find C from Table 3.1.
+
+\textbf{Step 2}: Find X and Y using Table 3.3.
+
+\textbf{Step 3}: Find tangential force
+
+\textbf{Step 4}: Find resultant in each bolt.
+
+
+
+
+
+
+
+% Find bearing size - cylindrical
+\textbf{Question 2}
+
+Determine the suitable size of 03-series straight cylindrical bearings for an industrial machine intended for a rating life of 48 hours operation at 2000 rpm. The radial load is 12.5 kN with extreme shock condition and the inner rings rotate.
+
+% Probability of failure
+\textbf{Question 3}
+
+
+
+
+% Well-defined
+\textbf{Question 4}
+
+\end{document}
