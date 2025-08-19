@@ -2,9 +2,9 @@
 \usepackage{enumitem}
 \usepackage{amsmath, amssymb}
 \usepackage{xstring}
-% \usepackage{siunitx} % To set engineering notation
 \usepackage{graphicx} % For including figures
 \graphicspath{{./figs/}} % Path to figures
+\usepackage[labelformat=empty]{caption}
 % Set engineering notation
 \providecommand{\sci}[1]{\protect\ensuremath{\times 10^{\StrSubstitute[0]{#1}{e}{}}}}
 \setlength{\parindent}{0pt} % Set paragraph indentation to zero
@@ -14,13 +14,52 @@
 \underline{\textbf{\large Tutorial 2: Power Screw}}
 \vspace{10pt}
 
-\textbf{Theory}
+\section{In-class activity}
+
+A screw of M10x1.5 is used as a lead screw for a machine with a torque of 10 Nm travelled linearly at 10mm/s. Determine;
+\begin{enumerate}[label=(\roman*)]
+    \item the mean diameter of the screw.
+    \item angular speed of the screw in rpm.
+    \item power carried by the screw.
+\end{enumerate}
+
+\textbf{Example Solution}
+
+\begin{enumerate}[label=(\roman*)]
+    \item Mean diameter of the screw:
+    \begin{equation*}
+        \begin{aligned}
+        d_m = \frac{D + (D - p)}{2} = \frac{10 + (10 - 1.5)}{2} = 9.25 \text{ mm}
+        \end{aligned}
+    \end{equation*}
+
+    \item Angular speed of the screw in rpm:
+    \begin{equation*}
+        \begin{aligned}
+        V_{linear} &=Lead \times n_{rpm} \times \frac {1 min}{60 s} \\
+        \frac {10mm}{1s} &=\frac {1.5mm}{1 rev} \times n_{rpm} \times \frac {1 min}{60 s} \\
+        n_{rpm} &= 400rpm
+        \end{aligned}
+    \end{equation*}
+
+    \item Power carried by the screw:
+    \begin{equation*}
+        \begin{aligned}
+        P &= \omega T=  \frac{2\pi n}{60} T\\
+        &= \frac{2\pi (400)}{60} (10)\\
+        &= 418.88 W
+        \end{aligned}
+    \end{equation*}
+\end{enumerate}
+
+\section{Theory}
 
 \begin{enumerate}
     \item What is a power screw?
     \item What is the purpose of a power screw?
     \item Draw and make a detail sketch of a square thread, Acme and Modified thread. Explain the difference between these threads and its applications.
 \end{enumerate}
+
 
 \textbf{Calculations}
 \vspace{10pt}
@@ -118,11 +157,14 @@ Screw overhaul when,
 \end{equation*}
 
 $\cos \alpha_n \tan \lambda$ is greater than $f$, therefore the screw is overhauling.
+\vspace{10pt}
 
-OR, can check using torque to lower the load. If the value is negative, it will overhaul.
+OR, can check using torque to lower the load. \\
+If the value is negative, it will overhaul.
 $$T_d = \frac{Wd_m}{2} \frac{f-\cos\alpha_n \tan\lambda}{\cos\alpha_n + f\tan\lambda} + \frac{Wf_c d_c}{2}$$
 
 $T_d=-1.02kN$, which is negative, therefore the screw is overhauling.
+\vspace{10pt}
 
 iv- Find efficiency of the jack, if collar friction is used,
 \begin{equation*}
@@ -143,6 +185,7 @@ v- Find the length of a crank required if F=150N is exerted by an operator,
     \end{aligned}
 \end{equation*}
 
+\newpage
 \textbf{Question 2}
 
 \begin{figure}[h]
@@ -253,7 +296,7 @@ iii - Maximum compressive force, Fc if allowable normal stress at the screw is 1
     \end{aligned}
 \end{equation*}
 
-Calculat the force at B when force at E changed
+Calculate the force at B when force at E changed
 \begin{equation*}
     \begin{aligned}
     +\circlearrowleft \sum M_A =0\\  
@@ -266,22 +309,49 @@ Calculat the force at B when force at E changed
 Force at C = Force at B = 336.6 N
 
 \newpage
+
 \textbf{Question 3}
-A screw of M10x1.5 is used as a lead screw for a machine with a torque of 10 Nm travelled linearly at 10mm/s. Determine;
+
+The bench hold-down clamp is being used to clamp two boards together while they are being glued as shown in Figure Q3. The clamp consists of a screw having single square threads of M12 X 2 and coefficient of friction in the screw thread is taken as 0.2. The screw producing maximum power of 35 W when moving at 2mm/s axially.
+
 \begin{enumerate}[label=(\roman*)]
-    \item the mean diameter of the screw.
-    \item angular speed of the screw in rpm.
-    \item power carried by the screw.
+    \item the torque acting at the screw
+
+    \item the compression force exerted on the boards when torque as (i) is applied
+
+    \item Recommend the suitable handle length, d if the compression force is increased to 1.5 kN, thus the user need to apply force of 100 N on the handle.
 \end{enumerate}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{t2-q3.png}
+    \caption{Figure Q3}
+\end{figure}
+
 
 \newpage
 \textbf{Question 4}
 
-The bench hold-down clamp is being used to clamp two boards together while they are being glued as shown in Figure Q1(c). The clamp consists of a screw having single square threads of M12 X 2 and coefficient of friction in the screw thread is taken as 0.2. The screw producing maximum power of 35 W when moving at 2mm/s axially.
-
-\newpage
-\textbf{Question 5}
-
 The screw is a double-start ACME thread of M12x 1.5. The clamping force exerted at G is FG=900 N. The mean diameter of the collar is dc = 22 mm. Coefficients of friction for screw and collar are estimated as f = 0.3 and fc = 0.15 respectively. The screw will travel axially at 95 mm/s. Find,
+
+\begin{enumerate}[label=(\roman*)]
+\item The screw lead, mean diameter, and helix angle
+\item The force and axial stress acting on the screw
+\item The torque for lifting and for lowering the load
+\item The force needed to apply perpendicular at E to produce the clamping force
+\item The angular rotation of the screw in rpm
+\item The power produced by the power screw
+\item The efficiency of the jack when lifting the load
+\item Whether the screw is overhauling
+\item Determine the maximum compressive force, if the new allowable normal stress at thescrew is 30 MPa.
+\item Recommend the suitable length of the handle if the compression force is increased to1.5 kN, thus the user needs to apply force of 100 N on the handle.
+\item Determine the new efficiency on the screw if a SQUARE thread is used. Compare theefficiency.
+\end{enumerate}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{t2-q4.png}
+    \caption{Figure Q4}
+\end{figure}
 
 \end{document}
