@@ -14,7 +14,7 @@
 \underline{\textbf{\large Tutorial 2: Power Screw}}
 \vspace{10pt}
 
-\section{In-class activity}
+\section*{In-class activity}
 
 A screw of M10x1.5 is used as a lead screw for a machine with a torque of 10 Nm travelled linearly at 10mm/s. Determine;
 \begin{enumerate}[label=(\roman*)]
@@ -52,7 +52,7 @@ A screw of M10x1.5 is used as a lead screw for a machine with a torque of 10 Nm 
     \end{equation*}
 \end{enumerate}
 
-\section{Theory}
+\section*{Theory}
 
 \begin{enumerate}
     \item What is a power screw?
@@ -60,8 +60,8 @@ A screw of M10x1.5 is used as a lead screw for a machine with a torque of 10 Nm 
     \item Draw and make a detail sketch of a square thread, Acme and Modified thread. Explain the difference between these threads and its applications.
 \end{enumerate}
 
-
-\textbf{Calculations}
+\newpage
+\section*{Calculations}
 \vspace{10pt}
 
 \textbf{Question 1}
@@ -205,109 +205,6 @@ The clamp assembly as shown in Figure Q2 consists of member AB and AC, which are
 \end{enumerate}
 
 
-\textbf{Example Solution}
-
-Given:
-$n = 1$(single start)\\
-$\alpha = 14.5$ (Acme thread)\\
-$diameter,D = 12.5$\\
-$pitch,p = 2.5$\\
-$Fc = 180$\\
-$d_c = 13.5$\\
-$f = 0.3$\\
-$f_c = 0.3$\\
-\vspace{10pt}
-
-i - Load acting at the screw, $F_E$
-\begin{equation*}
-    \begin{aligned}
-    +\circlearrowleft \sum M_A =0\\  
-    -F_E(0.03)-F_B(0.07) &=0\\ 
-    -F_E(0.2)-(180)(0.2) &=0\\ 
-    F_E &= 420  N
-    \end{aligned}
-\end{equation*}
-
-ii - Torque required to tighten the screw
-\begin{equation*}
-    \begin{aligned}
-    T_u = \frac{Wd_m}{2} \frac{f+\cos\alpha_n \tan\lambda}{\cos\alpha_n + f\tan\lambda} + \frac{Wf_c d_c}{2}
-    \end{aligned}
-\end{equation*}
-
-Find helix angle,
-\begin{equation*}
-    \begin{aligned}
-    \tan\lambda = \frac{L}{\pi d_m}\\
-    \end{aligned}
-\end{equation*}
-
-Find lead,
-\begin{equation*}
-    \begin{aligned}
-    Lead, L &=np\\
-    &=1(2.5)\\
-    &=2.5mm    
-    \end{aligned}
-\end{equation*}
-
-Find mean diameter,
-\begin{equation*}
-    \begin{aligned}
-    d_m &= \frac {D+(D-p)}{2}\\  
-    &= \frac {12.5+(12.5-2.5)}{2}\\ 
-    &= 11.25mm
-    \end{aligned}
-\end{equation*}
-
-From $\tan\lambda$ equation,
-\begin{equation*}
-    \begin{aligned}
-    \tan\lambda &= \frac{2.5mm}{\pi 11.25mm} \\
-    &=0.0707\\
-    \lambda &= \tan^{-1}(0.0707)\\
-    &=4.05^{\circ}
-    \end{aligned}
-\end{equation*}
-
-Find $\alpha_n$,
-\begin{equation*}
-    \begin{aligned}
-    \tan \alpha_n &= \cos \lambda \tan \alpha\\
-     &= \cos 4.05 \tan 14.5\\
-    &= 14.45^{\circ}
-    \end{aligned} 
-\end{equation*}
-
-Insert into torque to lift the load equation,
-\begin{equation*}
-    \begin{aligned}
-    T_u &= \frac{420(11.25\sci{e-3})}{2} \frac{0.3+\cos(14.45) \tan(4.05)}{\cos(14.45) + f\tan(4.05)} + \frac{420(0.3)(13.5\sci{e-3})}{2} \\
-    &=1.77 Nm
-    \end{aligned}
-\end{equation*}
-
-iii - Maximum compressive force, Fc if allowable normal stress at the screw is 10 MPa.
-\begin{equation*}
-    \begin{aligned}
-    \sigma &= \frac{F_E}{A}\\
-    10\sci{6}&=\frac{F_E}{\pi \left(\frac{0.01^2}{4}\right)}\\
-    F_E &=785.4 N
-    \end{aligned}
-\end{equation*}
-
-Calculate the force at B when force at E changed
-\begin{equation*}
-    \begin{aligned}
-    +\circlearrowleft \sum M_A =0\\  
-    F'_E(0.03)+F'_B(0.07) &=0\\ 
-    (785.4)(0.2)+(180)(0.2) &=0\\ 
-    F'_B &= 336.6 N
-    \end{aligned}
-\end{equation*}
-
-Force at C = Force at B = 336.6 N
-
 \newpage
 
 \textbf{Question 3}
@@ -353,5 +250,55 @@ The screw is a double-start ACME thread of M12x 1.5. The clamping force exerted 
     \includegraphics[width=0.5\textwidth]{t2-q4.png}
     \caption{Figure Q4}
 \end{figure}
+
+\newpage
+
+\textbf{Answer}
+\vspace{10pt}
+
+\textbf{Q2}
+
+i- Load acting at the screw, $F_E=420N$
+
+ii- Torque required to tighten the screw, $T=1.77Nm$
+
+iii- Maximum compressive force, $F_c=336.6N$
+
+\vspace{10pt}
+\textbf{Q3}
+
+i- Torque acting at the screw, $T=1.67Nm$
+
+ii- Compression force exerted on the boards, $F_c=420N$
+
+iii- Suitable handle length, $d=0.25m$
+
+\vspace{10pt}
+\textbf{Q4}
+
+i- Screw lead, $L=3mm$, mean diameter, $d_m=10.5mm$ and helix angle, $\lambda=8.21^{\circ}$
+
+ii- Force acting on the screw, $F=1088.9N$ and axial stress, $\sigma=12.47MPa$
+
+iii- Torque for lifting, $T_u=2.98Nm$ and for lowering the load, $T_d=-0.48Nm$
+
+iv- Force needed to apply perpendicular at E, $F=29.8N$
+
+v- Angular rotation of the screw, $n=3030rpm$
+
+vi- Power produced by the power screw, $P=94.8W$
+
+vii- Efficiency of the jack when lifting the load, $e=0.36$
+
+viii- The screw is overhauling
+
+\vspace{10pt}
+Well-defined Problem
+
+ix- Maximum compressive force, $F_c=2412N$
+
+x- Suitable length of the handle, $d=0.3m$
+
+xi- New efficiency on the screw if a SQUARE thread is used, $e=0.44$. The efficiency is increased by 0.08 or 8\%.
 
 \end{document}
