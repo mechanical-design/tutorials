@@ -40,11 +40,166 @@
 \section*{Calculation}
 % Note - Need direct question.
 \textbf{Question 1}
-% Unknown kp
+
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{t31-q1.png}
+    \caption{Figure Q1}
+\end{figure}
+
+The bolt of connnection M20 x 2.5, ISO coarse thread having Sy = 630 Mpa. The joint carries an external load of P = 40 kN. The bolt were made of steel of modulus elasticity Es and the parts are cast iron with modulus of elasticity Ec = Es/2. Determine
+
+\begin{enumerate}[label=(\roman*)]
+    \item The total force on the bolt if the joint is reusable
+    \item The tightening torque if the bolts are lubricated
+\end{enumerate}
+
+\vspace{10pt}
+\textbf{Example Solution}
+\vspace{10pt}
+
+$d = 0.02m$\\
+$p = 2.5mm$\\
+$Sy=630\sci{e6}$Pa\\
+$Load,P = 40\sci{e3}$N\\
+Engagement length between bolt and nut,\\
+$L = 0.06m$\\
+
+i - The total force on the bolt if the joint is reusable
+
+Total force on bolt equation
+
+\begin{equation}
+    \begin{aligned}
+    F_b=CP+F_i
+    \end{aligned}
+\end{equation}
+
+where $F_i=0.75F_p$ for reusable joint
+
+First, find joint stiffness factor.
+\begin{equation}
+    \begin{aligned}
+    C=\frac{k_b}{k_b+k_p}
+    \end{aligned}
+\end{equation}
+
+Find bolt stiffness factor, $k_b$
+\begin{equation}
+    \begin{aligned}
+    k_b=\frac{A_bE_b}{L}
+    \end{aligned}
+\end{equation}
+
+Change $E_b=E_s$ (steel)
+
+Then, substitue diameter of bolt, d=0.02m and grip distance, L=0.06m to find kb.
+\begin{equation*}
+    \begin{aligned}
+    k_b&=\frac{(\frac{\pi d^2}{4})E_s}{L} \\
+    &=\frac{(\frac{\pi 0.02^2}{4})E_s}{0.06} \\
+    &= 5.236\sci{e-3}E_s
+    \end{aligned}
+\end{equation*}
+
+Left $E_s$ as unknown.
+\vspace{10pt}
+
+Then, find Part stiffness factor, $k_p$.
+
+\begin{equation}
+    \begin{aligned}
+    k_p=\frac{0.58\pi E_p d}{2\ln\left( 5\frac{0.58l+0.5d}{0.58l+2.5d} \right)}
+    \end{aligned}
+\end{equation}
+
+Use $E_p=E_c=\frac{E_s}{2}$
+
+Substitute $E_p=E_s/2$ to kp equation so it can cancel out when finding C in Equation 2.
+
+\begin{equation*}
+    \begin{aligned}
+        k_p&=\frac{0.58\pi (\frac{E_s}{2}) d}{2\ln\left( 5\frac{0.58l+0.5d}{0.58l+2.5d} \right)}\\
+        &=\frac{0.58\pi (\frac{E_s}{2}) (0.02)}{2\ln\left( 5\frac{0.58(0.06)+0.5(0.02)}{0.58(0.06)+2.5(0.02)} \right)}\\
+        &= 9.379\sci{e-3}E_s
+    \end{aligned}
+\end{equation*}
+
+
+Substitute into joint stiffness factor equation, C (Eq. 2)
+\begin{equation*}
+    \begin{aligned}
+    C&=\frac{k_b}{k_b+k_p} \\
+    &=\frac{5.236\sci{e-3}E_s}{5.236\sci{e-3}E_s+9.379\sci{e-3}E_s} \\
+    &=\frac{5.236\sci{e-3}}{5.236\sci{e-3}+9.379\sci{e-3}} \\
+    &=\frac{5.236}{5.236+9.379} \\
+    &=0.3583
+    \end{aligned}
+\end{equation*}
+
+For reusable joint,$F_i=0.75F_p$ and Proof Strength, $F_p=S_pA_t$.\\
+If Yield strength is given, use $S_p=0.9Sy$. \\
+Therefore, the Preload equation become,
+\begin{equation*}
+    \begin{aligned}
+        F_i&=0.75F_p\\
+        &=0.75(S_pA_t)\\
+        &=0.75(0.9S_yA_t)\\
+    \end{aligned}
+\end{equation*}
+
+$A_t$ is the tensile stress area of the bolt.\\
+From Table 2.1, diameter of M20 bolt, $A_t=245\sci{e-6}mm^2$.
+
+Convert to $m^2$.
+
+\begin{equation*}
+    \begin{aligned}
+        A_t&=245mm^2\\
+        &=245mm^2\times(\frac{1m}{1000mm})^2\\
+        &=245\times1\sci{e-6}\\
+        &=245\sci{e-6}m^2
+    \end{aligned}
+\end{equation*}
+
+Substitute into Preload equation,
+\begin{equation*}
+    \begin{aligned}
+        &=0.75(0.9S_yA_t)\\
+        &=0.75(0.9)(630\sci{e6})(245\sci{e-6})\\
+        &=1.042\sci{e5}N
+    \end{aligned}
+\end{equation*}
+
+Substitute into Total force on bolt equation (Eq. 1)
+
+\begin{equation*}
+    \begin{aligned}
+        F_b&=CP+F_i\\
+        &=0.3583(40\sci{e3})+1.042\sci{e5}\\
+        &=1.185\sci{e5}N
+    \end{aligned}
+\end{equation*}
+
+ii- The tightening torque if the bolts are lubricated
+
+If joint are lubricated, k=0.15
+\begin{equation}
+    \begin{aligned}
+        T&=kdF_i\\
+        &=(0.15)(20\sci{e-3})(1.042\sci{e5})\\
+        &=312.56N.m
+    \end{aligned}
+\end{equation}
+
+\newpage
+\textbf{Question 2}
+% Unknown kp
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{t31-q2.png}
     \caption{Figure Q1}
 \end{figure}
 
@@ -57,134 +212,89 @@ A section of connection illustrated in Figure 1 forms a reusable connection. A t
     \item Suggest suitable material used for plates (Based on answer in iii)
 \end{enumerate}
 
-\vspace{10pt}
-\textbf{Example Solution}
-\vspace{10pt}
 
-Reusable connection. Fi = 0.75*Fp\\
-No. of bolt $N_{bolt}=4$\\
-Load = $150\sci{e+3}N$\\
-d=0.014m\\
-Pitch, p=1.5mm\\
-Fine thread Class 5.8. From table, $S_p=380$MPa\\
-$E_b=200\sci{e+9}$Pa\\
-$\sigma = 406.2\sci{e6}$Pa\\
-From figure, engagement length between parts, L=0.05m
-\vspace{10pt}
+\newpage
+% Use simple kp
+\textbf{Question 3}
 
-i-The joint stiffness factor.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{t31-q3.png}
+    \caption{Figure Q3}
+\end{figure}
 
-\begin{equation} \label{eqjointstiffness}
-    \begin{aligned}
-    C=\frac{k_b}{k_b+k_p}\\
-    \end{aligned}
-\end{equation}
+A bolted assembly of two parts is shown in Figure Q3, is to support an external load, P = 80 kN. The steel bolt is fine thread and the modulus of elasticity is 200 GPa and reused connection. The joint stiffness factor for the design is 0.286. The parts are made of cast iron with a modulus of elasticity of 70 GPa. Assume the factor of safety for the joint is 2. Determine;
 
-$k_b$ and $k_p$ are unknown. Find these two parameter first.
-
-Stiffness constant for bolts, $k_b$
-\begin{equation} \label{eqkb}
-    \begin{aligned}
-    k_b=\frac{A_b \times E_b}{L}
-    \end{aligned}
-\end{equation}
-
-Cross-sectional area for bolt,
-
-\begin{equation*}
-    \begin{aligned}
-    A_b &=\frac{\pi d^2}{4}\\
-    &= \frac{\pi (0.014)^2}{4}\\
-    &= 1.539\sci{e-4}
-    \end{aligned}
-\end{equation*}
-
-Substitute into Eq. \ref{eqkb},
-\begin{equation}
-    \begin{aligned}
-    k_b &= \frac{1.539\sci{e-4} \times (200\sci{e+9})}{0.05}\\
-    &= 6.158\sci{e8}
-    \end{aligned}
-\end{equation}
-
-$k_p$ cannot be determined because there are unknown values.
-
-Find C from Total force on bolt equation.
-
-Total force on bolt,
-\begin{equation} \label{totalForce}
-    \begin{aligned}
-    F_b=CP+F_i
-    \end{aligned}
-\end{equation}
-
-Force on the bolt can be found using stress equation.
-\begin{equation}
-    \begin{aligned}
-    \sigma = \frac{F_b}{A}
-    \end{aligned}
-\end{equation}
-
-\begin{equation*}
-    \begin{aligned}
-    406.3\sci{e+6} &=\frac{F_b}{\frac{\pi (0.014)^2}{4}}
-    \end{aligned}
-\end{equation*}
-
-Force on bolt, $F_b=62529.6N$
-
-From Eq.\ref{totalForce}, $F_i$ is still unknown.
-Find Preload, $F_i$
-\begin{equation*}
-    F_i=S_p \times A_t
-\end{equation*}
-From Table, $S_p=380\sci{e+6}$ and $A_t=125\sci{e-6}$
-
-\begin{equation*}
-    \begin{aligned}
-    F_i&=380\sci{e+6} \times 125\sci{e-6}\\
-    &=35625N 
-    \end{aligned}
-\end{equation*}
-
-Substitute into Eq.\ref{totalForce}
-\begin{equation*}
-    \begin{aligned}
-    62529 &= C(150\sci{e3})+35625 \\
-    C &=0.1793
-    \end{aligned}
-\end{equation*}
-
-ii - Stiffness constant for bolt and plates.
+\begin{enumerate}[label=(\roman*)]
+    \item The stiffness constant for the part of the effective area of the part is 2500 $mm^2$
+    \item The stiffness constant for the bolt and size of the bolt, d.
+    \item The suitable metric specification class number for the bolt and force on the bolt.
+\end{enumerate}
 
 
-From Eq.\ref{eqkb}, Stiffness constant for bolt is $k_b=6.158\sci{e8}$
+\newpage
+% Well-defined
+\textbf{Question 4}
 
-From Eq. \ref{eqjointstiffness}, substitue C and $k_b$ value
-\begin{equation*}
-    \begin{aligned}
-    C &=\frac{k_b}{k_b+k_p}\\
-    0.1794 &= \frac{6.158\sci{e8}}{6.158\sci{e8}+k_p} \\
-    k_p &=2.817\sci{e9}
-    \end{aligned}
-\end{equation*}
-(No unit)
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{t31-q4.png}
+    \caption{Figure Q4}
+\end{figure}
+
+Given M10 x 1.5 grade 5.8 bolts used to create a permanent joint connection for a pressure cylinder. A total of 2 number of bolts of modulus of elasticity 200 GPa is used to carries external load P = 8kN. The joint parts are cast iron ASTM A-48 with modulus of elasticity of 70 GPa. Determine;
+
+\begin{enumerate}[label=(\roman*)]
+    \item The stiffness constant for bolts, parts and joint’s stiffness factor
+    \item Proof strength of the bolt
+    \item Yield strength of the bolt
+    \item The preload on the bolt
+    \item The forces on the bolt and will the part be separated under load P?
+    \item The forces on the part
+    \item The torque on the bolt if the joint is lubricated
+    \item Pressure of gas on the cylinder if the diameter of the cylinder is 250 mm.
+
+\end{enumerate}
+
+Well-defined problem
+
+1. If the external load is increased by 60\%, suggest improvements need to be done to avoid separation?
+
+2. Recommend the maximum pressure if the number of bolts is increased to 6
+
+3. Is the joint safe or fail if the pressure is increased 30\%. Prove your answer.
+
+4. If the external load is increased by 30\%, suggest the suitable metric specification class number for the bolt.
+
+
+\newpage
+
+\textbf{Answer}
 \vspace{10pt}
 
-iii-Modulus of elasticity of plate Ep
+\textbf{Q2}
 
-From Eq of $k_p$
-\begin{equation}
-    \begin{aligned}
-        k_p &=\frac{0.58\pi E_p d}{2\ln\left( 5\frac{0.58d+0.5l}{0.58d+2.5l} \right)} \\
-        &=2.817\times10^9=\frac{0.58\pi E_p 0.014}{2\ln\left( 5\frac{0.58(0.014)+0.5(0.05)}{0.58(0.014)+2.5(0.05)} \right)}\\
-        &=2.284\sci{e11}\\
-        &=228.4GPa
-    \end{aligned}
-\end{equation}
+i- The joint stiffness factor, $C=0.1793$
 
+ii- Stiffness constant for bolt, $k_b=6.158\sci{e8}N/m$ and plates, $k_p=2.817\sci{e9}N/m$
 
-iv - Suggest suitable material used for plates (Based on answer in iii)
+iii- Modulus of elasticity of plate, $E_p=228.4GPa$
+
+iv- Suggest suitable material used for plates (Based on answer in iii)
+
+Structural steel ASTM A-36, High-strength Steel ASTM A-242
+
+\vspace{10pt}
+\textbf{Q3}
+
+i- The stiffness constant for the part of the effective area of the part is $k_p=3.5\sci{e9}$
+
+ii- The stiffness constant for the bolt is $k_b=1.402\sci{e9}N/m$ and size of the bolt, d=22mm
+
+iii- The suitable metric specification class number for the bolt is 8.8 and force on the bolt is $F_b=5.714\sci{e4}N$
+
+\vspace{10pt}
+\textbf{Q4}
 
 
 \end{document}
