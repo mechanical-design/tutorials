@@ -4,41 +4,242 @@
 \usepackage{xstring}
 \usepackage{graphicx} % For including figures
 \graphicspath{{./figs/}} % Path to figures
+\usepackage{caption}
 % Set engineering notation
 \providecommand{\sci}[1]{\protect\ensuremath{\times 10^{\StrSubstitute[0]{#1}{e}{}}}}
 \setlength{\parindent}{0pt} % Set paragraph indentation to zero
 
 \begin{document}
 
-\underline{\textbf{Tutorial 3.2: Eccentric Loading}}
+\underline{\textbf{Tutorial 3.2: Riveted Fasteners (Eccentric Loading)}}
 \vspace{10pt}
 
+
+\section*{In-class Activities}
+\begin{enumerate}
+    \item Find centroid of the bolt group with coordinates (0,0), (150,0), (150,120) and (0,120) mm.
+    \item Find Shear Stress if load of 5kN is applied to a bolt with diameter of 16mm.
+    \item A bracket in the form of plate is fitted to a column by a number of rivets. The riveted joint is under an inclined eccentric force. The plate is 15 mm thick and the diameter of rivet is 20 mm. Determine the bearing stress if the resultant shear force is 20 kN.
+\end{enumerate}
+
+\section*{Theory}
+\begin{enumerate}
+    \item State two (2) types of failure for riveted connections.
+    \item State two types of material used for riveted connections.
+\end{enumerate}
+
+
+\section*{Calculations}
+
 \textbf{Question 1}
+
+Figure shown below is a 15mm by 200mm rectangular steel bar cantilevered to a 250mm steel channel using four tightly fitted bolts located at A, B, C and D. For a F=16kN, find
+
+\begin{enumerate}[label=(\roman*)]
+    \item The resultant load on each bolt.
+    \item The maximum shearing stress for connection.
+\end{enumerate}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{t32-q1-1.png}
+    \captionsetup{labelformat=empty}
+    \caption{Figure Q1}
+\end{figure}
 
 \vspace{10pt}
 \textbf{Example Solution}
 \vspace{10pt}
 
+i - Find resultant load on each bolt.\\
+\vspace{10pt}
+
 \textbf{Step 1}: Find Centroid
 
-\textbf{Step 2}: Find distance between bolts and centroid.
+Use Bolt D as origin to find the centroid of the bolt group.
 
+Centroid equation.
+\begin{equation}
+    \begin{aligned}
+    \bar{X} &=\frac{\sum A_i x_i}{\sum A_i} = \frac{A_1 x_1 + A_2 x_2 + A_3 x_3 + A_4 x_4}{A_1 + A_2 + A_3 + A_4} \\
+    \bar{Y} &= \frac{\sum A_i y_i}{\sum A_i} = \frac{A_1 y_1 + A_2 y_2 + A_3 y_3 + A_4 y_4}{A_1 + A_2 + A_3 + A_4}
+    \end{aligned}
+\end{equation}
+where A is the area of each bolt, and (x,y) is the location of each bolt from Bolt D.
+
+Similar bolt size is used for all bolts, A.
+\begin{equation*}
+    \begin{aligned}
+    \bar{X} &= \frac{A(150+150+0+0)}{4A} \\
+    &= 75mm \\
+    \bar{Y} &= \frac{A(0+120+120+0)}{4A} \\
+    &= 60mm
+    \end{aligned}
+\end{equation*}
+
+Centroid is located at (75mm, 60mm) from Bolt D.
+
+\vspace{10pt}
+\textbf{Step 2}: Find distance between bolts and centroid. Then distance between centroid and line of action of load.
+
+Distance between Bolt A and Centroid, O is
+
+\begin{equation*}
+    \begin{aligned}
+        r_A&=\sqrt{(75)^2+(60)^2} \\
+        &= 96.05mm
+    \end{aligned}
+\end{equation*}
+Centroid, O is at the center of the bolt group.
+
+Therefore, distance between all bolts and centroid is same.
+
+\begin{equation*}
+    \begin{aligned}
+      r_A=r_B=r_C=r_D=96.05mm  
+    \end{aligned}
+\end{equation*}
+
+Distance between centroid and line of action of load.
+From diagram,
+
+\begin{equation*}
+    e = 75+50+300 = 425mm
+\end{equation*}
+
+\vspace{10pt}
 \textbf{Step 3}: Find tangential force
 
-\textbf{Step 4}: Find resultant in each bolt.
+Tangential force, $F_t$ is given by
+\begin{equation}
+    \begin{aligned}
+        F_t &=\frac{Per_i}{\sum r_i^2}
+    \end{aligned}
+\end{equation}
+
+Find Tangential force for bolt A,
+\begin{equation*}
+    \begin{aligned}
+        F_t &=\frac{Per_A}{\sum r_A^2+r_B^2+r_C^2+r_D^2}\\
+        &=\frac{16\sci{3}(425)(96.05)}{96.05^2+96.05^2+96.05^2+96.05^2} \\
+        &=\frac{16\sci{3}(425)(96.05)}{4(96.05^2)} \\
+        &=17700 N
+    \end{aligned}
+\end{equation*}
+
+From $r_A=r_B=r_C=r_D$, tangential force for bolt B, C and D is also 17700 N.
+
+\begin{equation*}
+    \begin{aligned}
+        F_{tB} = F_{tC} = F_{tD} = 17700N
+    \end{aligned}
+\end{equation*}
+\vspace{10pt}
+
+\textbf{Step 4}: Find resultant forces in each bolt.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{t32-q1-2.png}
+    % \caption{}
+\end{figure}
+
+\textbf{Bolt A}
+
+Tangential force angle.
+
+$tan^{-1}\left(\frac{60}{75}\right) = 38.66^{\circ}$
 
 
+\begin{equation*}
+    \begin{aligned}
+        \sum F_{Ax} &= F_{tA} \cos(38.66^{\circ})= 13821N\\
+        \sum F_{Ay} &= F_{tA} \sin(38.66^{\circ}) + \frac{16000}{4}=15057N\\
+        F_{A}&=\sqrt{F_{Ax}^2+F_{Ay}^2}=20439N
+    \end{aligned}
+\end{equation*}
+
+Resultant force in Bolt A is $F_A=20439N$.
+\vspace{10pt}
+
+\textbf{Bolt B}
+
+\begin{equation*}
+    \begin{aligned}
+        \sum F_{Bx} &= -F_{tB} \cos(38.66^{\circ})= 13821N\\
+        \sum F_{By} &= F_{tB} \sin(38.66^{\circ}) + \frac{16000}{4}=15057N\\
+        F_{B}&=\sqrt{F_{Bx}^2+F_{By}^2}=20439N
+    \end{aligned}
+\end{equation*}
+
+Resultant force in Bolt B is $F_B=20439N$.\\
+\vspace{10pt}
 
 
+\textbf{Bolt C}
+
+\begin{equation*}
+    \begin{aligned}
+        \sum F_{Cx} &= -F_{tC} \cos(38.66^{\circ})= 13821N\\
+        \sum F_{Cy} &= \frac{16000}{4}-F_{tC} \sin(38.66^{\circ}) =7057N\\
+        F_{C}&=\sqrt{F_{Cx}^2+F_{Cy}^2}=15518N
+    \end{aligned}
+\end{equation*}
+
+Resultant force in Bolt C is $F_C=15518N$.\\
+\vspace{10pt}
+
+\textbf{Bolt D}
+
+\begin{equation*}
+    \begin{aligned}
+        \sum F_{Dx} &= F_{tD} \cos(38.66^{\circ})= 13821N\\
+        \sum F_{Dy} &= \frac{16000}{4}-F_{tD} \sin(38.66^{\circ}) =7057N\\
+        F_{D}&=\sqrt{F_{Dx}^2+F_{Dy}^2}=15518N
+    \end{aligned}
+\end{equation*}
+
+Resultant force in Bolt D is $F_D=15518N$.
+\vspace{10pt}
+
+ii - Find maximum shearing stress for the connection.
+\vspace{10pt}
+
+Compare resultant forces in each bolt, Bolt A and B has the highest load of 20439N compare than Bolt C and D of 15518N.
+
+Bolt A and B is critical because they are subjected to the highest loads and will experience the maximum shearing stress.
+
+Shearing stress, $\tau$ is given by
+\begin{equation}
+    \begin{aligned}
+        \tau &=\frac{F}{A} = \frac{F}{\frac{\pi}{4}d^2}
+    \end{aligned}
+\end{equation}
+
+Assume bolt size is M16, diameter, $d=16mm$.
+\begin{equation*}
+    \begin{aligned}
+        \tau &=\frac{20439}{\frac{\pi}{4}(0.016)^2} \\
+        &=101.66 MPa
+    \end{aligned}
+\end{equation*}
 
 
-
+\newpage
 % Find diameter
 \textbf{Question 2}
 
 A gusset is attached vertically to a beam to support 1kN load under it. Determine the required rivet diameter if the allowable shear stress is 70MPa.
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{t32-q2.png}
+    \captionsetup{labelformat=empty}
+    \caption{Figure Q2}
+\end{figure}
+\vspace{10pt}
 
+\newpage
 % Find allowable load
 \textbf{Question 3}
 
@@ -46,11 +247,70 @@ A cantilevered bracket is bolted to a column with three M14X2 bolts as shown in 
 
 \begin{enumerate}[label=(\roman*)]
     \item Centroid of the bolts.
-    \item The allowable load, P if the shearing stress in bolt 2 is limited to 143MPa.
+    \item The allowable load, P if the shearing stress in Bolt A is limited to 143MPa.
 \end{enumerate}
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{t32-q3.png}
+    \captionsetup{labelformat=empty}
+    \caption{Figure Q3}
+\end{figure}
+\vspace{10pt}
 
+
+\newpage
 % Well-defined
+\textbf{Question 4}
 
+A riveted joint, consisting of four rivets is subjected to an eccentric force, P of 5 kN act at the angle of 30$^{\circ}$ to the horizontal as shown in Figure Q4. Determine:
+
+\begin{enumerate}
+    \item The centroid of the rivets assembly from rivet 4
+    \item The forces at rivet 2 and 3.
+    \item The maximum shear stress if A is $510mm^2$
+\end{enumerate}
+
+Given Area of each rivet:.
+\begin{equation*}
+    \begin{aligned}
+        A_1 &= A\\
+        A_2 &= 2A\\
+        A_3 &= A\\
+        A_4 &= 4A
+    \end{aligned}
+\end{equation*}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{t32-q4.png}
+    \captionsetup{labelformat=empty}
+    \caption{Figure Q4}
+\end{figure}
+\vspace{10pt}
+
+\newpage
+\textbf{Answer}
+\vspace{10pt}
+
+\textbf{Q2}
+
+Required diameter, $d=6mm$.
+\vspace{10pt}
+
+\textbf{Q3}
+
+i- Centroid is Bolt B which is located at (100mm, 0mm) from Bolt A.
+
+ii- Allowable load, P = 26.42 kN.
+\vspace{10pt}
+
+\textbf{Q4}
+
+i- Centroid is located at (75mm, 0mm) from Rivet 4.
+
+ii- Force at Rivet 2, $F_2=3654N$; Force at Rivet 3, $F_3=3503N$.
+
+iii- Maximum shear stress, $\tau_{max}=3.58 MPa$ at Rivet 2.
 
 \end{document}
