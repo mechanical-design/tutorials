@@ -4,6 +4,7 @@
 \usepackage{xstring}
 \usepackage{graphicx} % For including figures
 \graphicspath{{./figs/}} % Path to figures
+\usepackage[labelformat=empty]{caption} % To remove figure labels
 % Set engineering notation
 \providecommand{\sci}[1]{\protect\ensuremath{\times 10^{\StrSubstitute[0]{#1}{e}{}}}}
 \setlength{\parindent}{0pt} % Set paragraph indentation to zero
@@ -13,7 +14,24 @@
 \underline{\textbf{Tutorial 4: Bearing}}
 \vspace{10pt}
 
-% Find rating life - Take from Q2
+\section*{In-class Activities}
+\begin{enumerate}
+    \item Choose the bore diameter of a deep groove ball bearing with requirement of a basic dynamic load rating of 4 kN.
+    \item Select the bore diameter of a 03 series cylindrical roller bearing with minimum design of load rating of 30 kN.
+    \item Straight cylindrical bearings are commonly used in heavy machinery. Compare the differences in term of outer diameter, width, and load rating between 02-series and 03-series straight cylindrical bearings for a bore diameter of 50 mm.
+\end{enumerate}
+
+\section*{Theory}
+\begin{enumerate}
+    \item List two advantages of roller bearing over ball bearing.
+    \item What is the difference between deep groove ball bearing and angular contact ball bearing?
+    \item What are the factors that affect the life of a bearing?
+    \item What is the purpose of lubrication in a bearing?
+    \item What are the common types of failure in a bearing?
+\end{enumerate}
+
+\section*{Calculations}
+% Find rating life  - ball bearing
 \textbf{Question 1}
 
 A 50 mm bore (02 series) deep groove ball bearing carries a combined load of 9kN radially and 6 kN axially at 1200 rpm. Calculate:
@@ -22,43 +40,295 @@ A 50 mm bore (02 series) deep groove ball bearing carries a combined load of 9kN
     \item The equivalent radial load
     \item Rating life in hours.
     \item Median life in hours.
-    \item The loading of a ball bearing if the expected life is increased by 25%
+    \item The loading of a ball bearing if the expected life is increased by 25\%.
+    \item The expected rating life if probability of failure in decreases to 5\%.
 \end{enumerate}
 
 Assumptions: The outer ring rotates and loads in moderate shock
+
+\newpage
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{t4-q1.png}
+    \caption{Figure Q1}
+\end{figure}
 
 \vspace{10pt}
 \textbf{Example Solution}
 \vspace{10pt}
 
+Bore diameter \(d=50mm\)
 
+Bearing type: Deep groove ball bearing
 
-\textbf{Step 1}: Find C from Table 3.1.
+Radial load \(F_r = 9 kN\)
 
+Axial load \(F_a = 6 kN\)
+
+Speed \(n_{rpm} = 1200 rpm\)
+
+Outer ring rotates \(V=1.2\)
+
+Moderate shock for ball bearing \(K_s=2\)
+
+\vspace{10pt}
+i - The equivalent radial load.
+\vspace{10pt}
+
+\textbf{Step 1}: Find C and Cs from Table 3.1.
+
+From Table 3.1, for a 50 mm bore deep groove ball bearing, the basic dynamic load rating \(C\) is 35.1 kN and the basic static load rating \(C_s\) is 19.6 kN.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Bore Diameter (mm) & C (kN) & Cs (kN) \\
+        \hline
+        50 & 35.1 & 19.6 \\
+        \hline
+    \end{tabular}
+    \caption{Table 3.1}
+    
+\end{table}
+
+\vspace{10pt}
 \textbf{Step 2}: Find X and Y using Table 3.3.
 
-\textbf{Step 3}: Find tangential force
+First, find \(F_a/C_s = 6000/19600 = 0.306\) to use Table 3.3. 
 
-\textbf{Step 4}: Find resultant in each bolt.
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \(F_a/C_s\) & e\\
+        \hline
+        0.28 & 0.38\\
+        \hline
+        \textbf{0.306} & \textbf{e} \\
+        \hline
+        0.22 & 0.42\\
+        \hline
+    \end{tabular}
+    \caption{Table 3.3}
+\end{table}
 
+Interpolate to find e when \(F_a/C_s = 0.306\).
 
+\begin{equation*}
+    \begin{aligned}
+        e = 0.38 + \frac{0.306 - 0.28}{0.42 - 0.38} \times (0.42 - 0.38) = 0.39
+    \end{aligned}
+\end{equation*}
 
+Find \(F_a/VF_r = 6000/1.2(9000) = 0.556\). 
 
+Since \(F_a/VF_r>e\) which \(0.556 > 0.39\), use the second column of Table 3.3.
 
+From Table 3.3, \(X=0.56\). Y value is between 1.15 and 1.04.
 
+Interpolate to find Y.
 
-% Find bearing size - cylindrical
+\begin{table}
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \(F_a/C_s\) & Y\\
+        \hline
+        0.28 & 1.15\\
+        \hline
+        \textbf{0.306} & \textbf{Y} \\
+        \hline
+        0.42 & 1.04\\
+        \hline
+    \end{tabular}
+    \caption{Table 3.3}
+\end{table}
+
+\begin{equation*}
+    \begin{aligned}
+        Y = 1.15 + \frac{0.306 - 0.28}{1.04 - 1.15} \times (0.42 - 0.28) = 1.13
+    \end{aligned}
+\end{equation*}
+
+\vspace{10pt}
+\textbf{Step 3}: Find equivalent radial load.
+
+Considering the outer ring rotates and moderate shock.
+\begin{equation}
+    \begin{aligned}
+        P &= K_s(XVF_r + YF_a) \\
+    \end{aligned}
+\end{equation}
+
+Substitute \(V=1.2\) and \(K_s=2\) into (1).
+
+\begin{equation*}
+    \begin{aligned}
+        P&= 2(0.56(1.2)(9000) + 1.13(6000)) \\
+        &= 25651 N \\
+        &= 25.651 kN
+    \end{aligned}
+\end{equation*}
+
+\vspace{10pt}
+ii - The rating life in hours.
+\begin{equation}
+    \begin{aligned}
+        L_{10} &=\frac{10^6}{60n_{rpm}} \left(\frac{C}{P}\right)^a \text{ hours}\\
+    \end{aligned}
+\end{equation}
+
+where a=3 for ball bearing.
+
+$n_{rpm}$ = 1200 rpm
+
+Substitute C and P into (2).
+
+\begin{equation*}
+    \begin{aligned}
+        L_{10} &=\frac{10^6}{60(1200)} \left(\frac{35.1}{25.651}\right)^3\\
+        &= 36 \text{ hours}
+    \end{aligned}
+\end{equation*}
+
+\vspace{10pt}
+iii - The median life in hours.
+
+Median life if five times of rating life, \(5L_{10}\).
+
+\begin{equation*}
+    \begin{aligned}
+        5L_{10}&= 5(36) \\
+        &= 180 \text{ hours}
+    \end{aligned}
+\end{equation*}
+
+iv - The loading of a ball bearing if the expected life is increased by 25\%.
+
+\begin{equation}
+    \begin{aligned}
+        \frac{L'_{10}}{L"_{10}} = \left(\frac{P_2}{P_1}\right)^a
+    \end{aligned}
+\end{equation}
+
+Current expected life: \( L'_{10}=100\%\)
+
+Increase expected life to 25\%: \( L"_{10}=125\%\)
+
+\begin{equation*}
+    \begin{aligned}
+        \frac{100}{125} &= \left(\frac{P_2}{25651}\right)^3 \\
+        P_2&= 23812 N \\
+    \end{aligned}
+\end{equation*}
+
+v - The expected rating life if probability of failure decreases to 5\%.
+
+Current probability of failure is 10\% when rating life \(L_{10} = 36\) hours.
+
+Probability of failure 10\% means 90\% reliability.
+
+When probability of failure decreases to 5\%, reliability increases to 95\%.
+
+From Figure 3.1 Graph of reliability factor, when reliability is 0.95, the life adjustment factor is \(K_r=0.62\).
+
+Use Rating life equation when reliability greater than 90\%,\(L_5\).
+
+\begin{equation}
+    \begin{aligned}
+        L_{5} &= K_r \frac{10^6}{60n_{rpm}} \left(\frac{C}{P}\right)^a \text{ hours}\\
+    \end{aligned}
+\end{equation}
+
+\begin{equation*}
+    \begin{aligned}
+        L_{5} &= 0.62 \frac{10^6}{60(1200)} \left(\frac{35.1}{25.651}\right)^3\\
+        &= 22 \text{ hours}
+    \end{aligned}
+\end{equation*}
+
+\newpage
+% Double row angular contact
 \textbf{Question 2}
 
-Determine the suitable size of 03-series straight cylindrical bearings for an industrial machine intended for a rating life of 48 hours operation at 2000 rpm. The radial load is 12.5 kN with extreme shock condition and the inner rings rotate.
+A 60mm bore (02 series) double row angular contact ball bearing shown in Figure \ref{fig:q2} has a 15° contact angle. The outer ring rotates, and the bearing carries a combined steady load of 5kN radially and 1.5kN axially at 1000rpm. Calculate the median life in hours.
+\begin{enumerate}[label=(\roman*)]
+    \item The equivalent radial load.
+    \item Rating life in hours.
+    \item Median life in hours.
+\end{enumerate}
 
-% Probability of failure
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{t4-q2.png}
+    \caption{Figure Q2}
+    \label{fig:q2}
+\end{figure}
+
+\newpage
+% cylindrical
 \textbf{Question 3}
 
+A 40mm bore (03 series) straight cylindrical bearings shown in Fig.\ref{fig:q3} operates at 2400rpm. Radial load is 5kN, with heavy shock and the outer rings rotate.  
+
+\begin{enumerate}[label=(\roman*)]
+    \item Find the rating life in hours.
+    \item Next, during assembly, the width of the bearing have limitations to be below than 20mm. Suggest an alternative bearing type that can be used to replace the straight cylindrical bearing.
+    \item Estimate decrease of the rating life.
+\end{enumerate}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{t4-q3.png}
+    \caption{Figure Q3}
+    \label{fig:q3}
+\end{figure}
 
 
-
+\newpage
 % Well-defined
 \textbf{Question 4}
+
+A solid steel shaft carries belt tension at pulley C as shown in Figure \ref{fig:q4}. Bearing at both ends of the shaft are taken to be identical 02 series deep groove and subjected to light shock loading. The inner ring rotates and operating at a speed of 1800 rpm. The average life of 10 years at 10 hours per day and 300 working day per years. Determine:
+\begin{enumerate}[label=(\roman*)]
+    \item The equivalent radial load on each bearing.
+    \item The suitable bore diameter of the bearing.
+    \item Expected rating life if the probability of failure is reduced to 5\% at 1200 rpm.
+\end{enumerate}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{t4-q4-1.png}
+    \caption{Figure Q4}
+    \label{fig:q4}
+\end{figure}
+
+
+\newpage
+\textbf{Answer}
+\vspace{10pt}
+
+\textbf{Q2}
+\begin{enumerate}[label=(\roman*)]
+    \item The equivalent radial load is 8.08 kN.
+    \item The rating life is 5519 hours.
+    \item The median life is 27595 hours.
+    \end{enumerate}
+
+\textbf{Q3}
+\begin{enumerate}[label=(\roman*)]
+    \item The rating life is 2039 hours.
+    \item Use 02-series straight cylindrical bearing with 40mm bore diameter and 18mm width.
+    \item The decrease of the rating life is 1274 hours.
+\end{enumerate}
+
+\textbf{Q4}
+\begin{enumerate}[label=(\roman*)]
+    \item The equivalent radial load on bearing A is 198 N and on bearing B is 132 N.
+    \item The suitable bore diameter of the bearing is 10 mm.
+    \item The expected rating life if the probability of failure is reduced to 5\% at 1200 rpm is 144573 hours.
+\end{enumerate}
+
 
 \end{document}
