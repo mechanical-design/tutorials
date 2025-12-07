@@ -1,0 +1,361 @@
+\documentclass[a4paper, fleqn]{article}
+\usepackage{enumitem}
+\usepackage{amsmath, amssymb}
+\usepackage{xstring}
+\usepackage{graphicx} % For including figures
+\graphicspath{{./figs/}} % Path to figures
+\usepackage[labelformat=empty]{caption} % To remove figure labels
+% Set engineering notation
+\providecommand{\sci}[1]{\protect\ensuremath{\times 10^{\StrSubstitute[0]{#1}{e}{}}}}
+\setlength{\parindent}{0pt} % Set paragraph indentation to zero
+
+\begin{document}
+
+\underline{\textbf{Tutorial 5: Belts}}
+\vspace{10pt}
+
+\section*{Theory}
+\begin{enumerate}
+    \item What are the common types of belts used in mechanical systems?
+    \item What are the advantages and disadvantages of using belts for power transmission?
+    \item How do you determine the appropriate belt size for a specific application?
+
+\end{enumerate}
+
+
+\section*{Calculations}
+
+\textbf{Question 1}
+
+A plastic flat belt 60 mm wide and 0.5 mm thick transmits 10 kW. The input pulley has a diameter of 300 mm, it rotates at 2800 rpm, and the output pulley speed is 1600 rpm; the pulleys are 700 mm apart, the coefficient of friction is 0.2, and belt weight is 25 kN/m3. It is assumed that the driver is a high torque motor, and the driven machine is under a medium shock load. Determine;
+
+\begin{enumerate}[label=(\roman*)]
+    \item the torque at smaller pulley
+    \item the contact angle at driver and driven pulleys
+    \item the centrifugal tension in the belt
+    \item the maximum tension and stress in the belt
+\end{enumerate}
+ 
+\vspace{10pt}
+\textbf{Example Solution}
+\vspace{10pt}
+
+\textbf{Given Data:}
+
+
+Belt width, b = 60 mm = 0.06 m
+
+Belt thickness, t = 0.5 mm = 0.0005 m
+
+Power, P = 10 kW = 10000 W
+
+Diameter of smaller pulley, d1 = 300 mm = 0.3 m
+
+Speed of smaller pulley, n1 = 2800 rpm
+
+Speed of larger pulley, n2 = 1600 rpm
+
+Distance between pulleys, c = 700 mm = 0.7 m
+
+Coefficient of friction, f = 0.2
+
+Belt weight, = 25 kN/m
+
+\vspace{10pt}
+i - Torque at smaller pulley
+
+\begin{equation*}
+    \begin{aligned}
+    Power, P &= \dfrac{2\pi n_{rpm}}{60} T\\
+    T &= \dfrac{(10000) 60}{2 \pi (2800)}\\
+    &=34.1 Nm
+    \end{aligned}
+\end{equation*}
+
+ii - Contact angle
+
+\begin{equation*}
+    \begin{aligned}
+    \sin \alpha &= \dfrac{r_2 - r_1}{c}\\
+    \end{aligned}
+\end{equation*}
+
+Diameter of larger pulley is unknown, thus we can find it using the relation between the speeds of the pulleys.
+\begin{equation*}
+    \begin{aligned}
+    \dfrac{n_1}{n_2} &= \dfrac{d_2}{d_1}\\
+    d_2 &= \dfrac{n_1 d_1}{n_2} = \dfrac{2800 \times 0.3}{1600} = 0.525 m
+    \end{aligned}
+\end{equation*}
+
+where, smaller pulley radius,$r_1 = \dfrac{0.3}{2} = 0.15 m$
+\vspace{10pt}
+
+larger pulley radius, $r_2  = \dfrac{0.525}{2} = 0.2625 m$\\
+
+Find $\alpha$:
+\begin{equation*}
+    \begin{aligned}
+    \sin \alpha &= \dfrac{0.2625 - 0.15}{0.7}\\
+    \alpha &= 9.25^{\circ}\\
+    \end{aligned}
+\end{equation*}
+
+Equation to find contact angle is in radians $\phi = \pi - 2\alpha$, thus we need to
+convert to radians:
+\begin{equation*}
+    \begin{aligned}
+    \alpha &= 9.25^{\circ} \times \dfrac{\pi}{180} = 0.1614 rad
+    \end{aligned}
+\end{equation*}
+
+Contact angle for driver pulley(smaller pulley):
+\begin{equation*}
+    \begin{aligned}
+    \theta_1 &= \pi - 2\alpha\\
+    &= \pi - 2(0.1614) = 2.82 rad
+    \end{aligned}
+\end{equation*}
+
+Contact angle for driven pulley(larger pulley):
+\begin{equation*}
+    \begin{aligned}
+    \theta_2 &= \pi + 2\alpha\\
+    &= \pi + 2(0.1614) = 3.48 rad
+    \end{aligned}
+\end{equation*}
+
+iii - Centrifugal tension in the belt
+
+Centrifugal tension, $F_c = \dfrac{w}{g} v^2$, or {$F_c = \rho A v^2$}
+
+where $w$ is belt weight per unit length (N/m) and $v$ is velocity of belt. $g$ is acceleration due to gravity.
+
+Belt weight given as $25 kN/m^3 = 25000 N/m^3$. Need to find belt weight per unit length, $w$ in (N/m): 
+
+\begin{equation*}
+    \begin{aligned}
+    w &= 25000 \left(\dfrac{N}{m^3}\right) \times \text{Cross section area of belt} (m^2) \\
+    &= 25000 \left(\dfrac{N}{m^3}\right) \times 0.06m \times 0.0005m = 0.75 N/m
+    \end{aligned}
+\end{equation*}
+
+where,
+
+Belt width, b = 60 mm = 0.06 m
+
+Belt thickness, t = 0.5 mm = 0.0005 m
+
+Next, velocity of belt, $v = \dfrac{\pi d_1 n_1}{60} = \dfrac{\pi \times 0.3 \times 2800}{60} = 43.98 m/s$\\
+
+Now, calculate centrifugal tension, $F_c$:
+
+\begin{equation*}
+    \begin{aligned}
+    F_c &= \dfrac{0.75}{9.81} (43.98)^2\\
+    &= 147.88 N
+    \end{aligned}
+\end{equation*}
+
+iv - Maximum tension and stress in the belt
+
+Maximum tension is tension of the belt at tight side, $F_1$
+
+Using belt tension equation for flat belt:
+\begin{equation*}
+    \begin{aligned}
+    \dfrac{F_1-F_c}{F_2-F_c} &= e^{f \phi}\\
+    \end{aligned}
+\end{equation*}
+
+where, 
+
+$F_1$ : tension on the tight side in the belt, 
+
+$F_2$ : the tension on the slack side of the belt,
+
+$F_c$ : centrifugal tension, 
+
+$f$ : coefficient of friction, 
+
+$\phi$ : contact angle in radians.
+
+\begin{equation*}
+    \begin{aligned}
+    \dfrac{F_1-147.88}{F_2-147.88} &= e^{0.2(2.8188)}\\
+    \dfrac{F_1-147.88}{F_2-147.88} &= 1.7573\\
+    F_1 - 147.88 &= 1.7573 (F_2 - 147.88)\\
+    F_1 &= 1.7573 F_2 - 259.89 + 147.88\\
+    \end{aligned}
+\end{equation*}
+
+\begin{equation}
+    \begin{aligned}
+    F_1 &= 1.7573 F_2 - 112.01\\
+    \end{aligned}
+    \label{eq1}
+\end{equation}
+
+From torque equation:
+\begin{equation*}
+    \begin{aligned}
+    T &= (F_1 - F_2) r_1\\
+    34.1 &= (F_1 - F_2) (0.15)\\
+    \dfrac{34.1}{0.15}  &= F_1 - F_2\\
+    227.33  &= F_1 - F_2\\
+    \end{aligned}
+\end{equation*}
+
+\begin{equation}
+    \begin{aligned}
+    F_2 &= F_1 - 227.33\\
+    \end{aligned}
+    \label{eq2}
+\end{equation}
+
+Substitute equation 2 into equation 1:
+\begin{equation*}
+    \begin{aligned}
+    F_1 &= 1.7573 (F_1 - 227.33) - 112.00\\
+    F_1 &= 1.7573 F_1 - 399.5 - 112.00\\
+    F_1 - 1.7573 F_1 &= -511.5\\
+    -0.7573 F_1 &= -511.5\\
+    F_1 &= \dfrac{511.5}{0.7573}\\
+    &= 675.42 N
+    \end{aligned}
+\end{equation*}
+
+OR use belt tension relationship:
+
+\begin{equation*}
+    \begin{aligned}
+    F_1 &= Fc+ \left(\dfrac{\gamma}{\gamma-1}\right) \dfrac{T_1}{r_1}\\
+    \end{aligned}
+\end{equation*}
+
+where,
+
+$\gamma = e^{f \phi}$ for flat belt.
+
+Substituting the values:
+\begin{equation*}
+    \begin{aligned}
+        \gamma &= e^{0.2(2.8188)} = 1.7573\\
+        F_1 &= 147.88 + \left(\dfrac{1.7573}{1.7573-1}\right) \dfrac{34.1}{0.15}\\
+        F_1 &= 675.48 N
+    \end{aligned}
+\end{equation*}
+
+The final answer is approximately the same using both methods.
+
+\vspace{10pt}
+Maximum stress in the belt, A is the cross-sectional area of the belt:
+\begin{equation*}
+    \begin{aligned}
+    \sigma_{max} &= \dfrac{F_1}{A}\\
+    \sigma_{max} &= \dfrac{675.48}{0.06 \times 0.0005}\\
+    &= 22.52 MPa
+    \end{aligned}
+\end{equation*}
+
+\newpage
+\textbf{Question 2}
+
+V belt drive has a 200mm diameter small sheave with 170° contact angle, 38° included angle, coefficient of friction of 0.15, 1600rpm driver speed, belt weight 8N/m and a tight side tension of 3kN. Determine the power capacity of the drive.
+
+\newpage
+
+\textbf{Question 3}
+
+A v belt drives has an included angle of $38^\circ$, belt density, $\rho=2100 \, \text{kg/m}^3$, belt cross sectional are of $145 mm^2$, coefficient of friction of 0.25, $r_1$=150mm, $\phi$=160, $n_1$=3000rpm and $F_2$=800N. Calculate
+
+\begin{enumerate}[label=(\roman*)]
+    \item the maximum power transmitted
+    \item the maximum stress in the belt
+\end{enumerate}
+
+\newpage
+
+\textbf{Question 4}
+
+In a horizontal V belt drive for a centrifugal blower, the blower is belt driven at 600 rpm by a 15 kW, 1750rpm electric motor. The groove angle of the pulley is 35°. The center distance is twice the diameter of the larger pulley and velocity of the belt is 20 m/s. The density of the belt material is 1500kg/m3 and maximum allowable stress is 4MPa. The coefficient of friction of motor pulley is 0.5. Determine
+
+\begin{enumerate}[label=(\roman*)]
+    \item the diameter of the blower pulley
+    \item the belt length
+    \item the size of the belt in mm2
+\end{enumerate}
+
+\newpage
+
+\textbf{Question 5}
+
+A motor with 16 kW power is attached to a compressor via a flat belt with a length of 3 m.
+The belt experienced a maximum stress of 4 MPa in an operation and medium shock with
+Ks =1.5. If the coefficient of friction between the belt surface and the pulleys are 0.4 and the density of the belt is 950 kg/m3 and the details of the belt drive are tabulated in Table 1. Determine;
+
+\begin{table*}[h]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+ & Diameter & Speed \\
+\hline
+ Compressor Pulley & 0.6 & 1200 \\
+ Motor Pulley & dm & 1800 \\
+\hline
+\end{tabular}
+\caption{Table Q5}
+\end{table*}
+
+\begin{enumerate}[label=(\roman*)]
+    \item the diameter of the motor pulley, dm
+    \item the center distance, c between the pulleys.
+    \item angle of wrap or contact angle, of both pulleys. Does the angle equal? In what circumstances the angles will be equal?
+    \item torque on both pulleys. Does the torque on both pulleys equal? Why? In what circumstances the torque will be equal? How about power?
+    \item Velocity of the belt, v
+    \item Centrifugal force, Fc
+    \item Cross section of belt, A
+    \item Tight tension on belt, F1
+    \item Slack tension on belt, F2
+    \item The initial tension on the belt, Fi
+\end{enumerate}
+
+
+\newpage
+
+\textbf{Answer}
+
+\textbf{Q2}
+\begin{enumerate}[label=(\roman*)]
+    \item $P = 34.6 kW$
+\end{enumerate}
+
+\textbf{Q3}
+\begin{enumerate}[label=(\roman*)]
+    \item $P = 44.0 kW$
+    \item $\sigma_{max} = 11.96 MPa$
+\end{enumerate}
+
+\textbf{Q4}
+\begin{enumerate}[label=(\roman*)]
+    \item $d_2 = 0.636 m = 636 mm$
+    \item $L = 3.92 m$
+    \item $A = 223 mm^2$
+\end{enumerate}
+
+\textbf{Q5}
+\begin{enumerate}[label=(\roman*)]
+    \item $d_1 = 0.4 m = 400 mm$
+    \item $c = 0.708 m$
+    \item $\phi_1 = 163.76^{\circ}$, $\phi_2 = 196.24^{\circ}$
+    \item $T_1 = 84.88 Nm$, $T_2 = 127.32 Nm$
+    \item $v = 37.70 m/s$
+    \item $F_c = 1350225.5 A$, Fc = 638.66 N (After find A)
+    \item $A = 473 mm^2$
+    \item $F_1 = 1261.42 N$
+    \item $F_2 = 837.19 N$
+    \item $F_i = 1049.31 N$
+\end{enumerate}
+
+
+\end{document}
