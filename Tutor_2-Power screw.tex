@@ -100,7 +100,7 @@ Find helix angle,
 ii-Find torque to lift the load,
 \begin{equation*}
     \begin{aligned}
-    T_u = \frac{Wd_m}{2} \frac{f+\cos\alpha_n \tan\lambda}{\cos\alpha_n + f\tan\lambda} + \frac{Wf_c d_c}{2}
+    T_u = \frac{Wd_m}{2} \frac{f+\cos\alpha_n \tan\lambda}{\cos\alpha_n - f\tan\lambda} + \frac{Wf_c d_c}{2}
     \end{aligned}
 \end{equation*}
 
@@ -116,7 +116,7 @@ Find $\alpha_n$
 Substitute known values into torque to lift the load equation,
 \begin{equation*}
     \begin{aligned}
-    T_u &= \frac{Wd_m}{2} \frac{f+\cos\alpha_n \tan\lambda}{\cos\alpha_n + f\tan\lambda} + \frac{Wf_c d_c}{2} \\
+    T_u &= \frac{Wd_m}{2} \frac{f+\cos\alpha_n \tan\lambda}{\cos\alpha_n - f\tan\lambda} + \frac{Wf_c d_c}{2} \\
     &= \frac{6000(28\sci{e-3})}{2} \times\frac{0.12+\cos(14.37) \tan(7.768)}{\cos(14.37) - 0.12\tan(7.768)} + \frac{6000(0.09)(40\sci{e-3})}{2} \\
     &= 33 Nm
     \end{aligned}
