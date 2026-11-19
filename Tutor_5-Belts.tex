@@ -19,16 +19,62 @@
 \begin{enumerate}
     \item What are the common types of belts used in mechanical systems?
     \item What are the advantages and disadvantages of using belts for power transmission?
+    \item Discuss the applications of flat belt, V-belt, round belt, and timing belt.
+    \item Find speed of the output pulley. Discuss relation between pulley size and speed.
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.75\textwidth]{t5-c2.png}
+    \end{figure}
+    \item Find contact angle for small and large pulley if $\alpha=5^\circ$.
     \item How do you determine the appropriate belt size for a specific application?
-
+    
 \end{enumerate}
 
+\textbf{Solution}
+\begin{enumerate}
+    \item There are several types of belts commonly used in mechanical systems:
+    \begin{itemize}
+        \item \textbf{V-Belts:} These belts have a trapezoidal cross-section and are used in applications where high torque transmission is required.
+        \item \textbf{Flat Belts:} These belts have a rectangular cross-section and are used in applications with lower power requirements.
+        \item \textbf{Timing Belts:} These belts have teeth that mesh with pulleys to provide precise timing and positioning.
+    \end{itemize}
+    \addtocounter{enumi}{2}
+    \item Use equation $n_1/n_2 = d_2/d_1$ to find the speed of the larger pulley. \\
+    $$
+    \dfrac{n_1}{n_2} = \dfrac{d_2}{d_1} \implies n_2 = \dfrac{n_1 d_1}{d_2}
+    $$
+    $$
+    n_2 = \dfrac{1200 \times 0.2}{0.3}= 800 \text{ rpm}
+    $$
+    Larger output pulley rotates at a lower speed compared to the smaller pulley due to the inverse relationship between pulley diameter and rotational speed.
+    \item Contact angle for small pulley \\
+    $$
+    \alpha_s = 180^\circ - 2 \times 5^\circ = 170^\circ
+    $$
+    Contact angle for large pulley \\
+    $$
+    \alpha_l = 180^\circ + 2 \times 5^\circ = 190^\circ
+    $$
+    \item When selecting a belt for a specific application, consider the following factors:
 
+        \begin{itemize}
+            \item Load capacity
+            \item Speed
+            \item Environmental conditions
+        \end{itemize}
+\end{enumerate}
+
+\newpage
 \section*{Calculations}
 
 \textbf{Question 1}
 
-A plastic flat belt 60 mm wide and 0.5 mm thick transmits 10 kW. The input pulley has a diameter of 300 mm, it rotates at 2800 rpm, and the output pulley speed is 1600 rpm; the pulleys are 700 mm apart, the coefficient of friction is 0.2, and belt weight is 25 kN/m3. It is assumed that the driver is a high torque motor, and the driven machine is under a medium shock load. Determine;
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{t5-q1.png}
+\end{figure}
+
+A plastic flat belt 60 mm wide and 0.5 mm thick transmits 10 kW. The input pulley has a diameter of 300 mm, it rotates at 2800 rpm, and the output pulley speed is 1600 rpm; the pulleys are 700 mm apart, the coefficient of friction is 0.2, and belt weight is $25 kN/m^3$. It is assumed that the driver is a high torque motor, and the driven machine is under a medium shock load. Determine;
 
 \begin{enumerate}[label=(\roman*)]
     \item the torque at smaller pulley
@@ -114,7 +160,14 @@ Contact angle for driver pulley(smaller pulley):
 \begin{equation*}
     \begin{aligned}
     \theta_1 &= \pi - 2\alpha\\
-    &= \pi - 2(0.1614) = 2.82 rad
+    &= \pi - 2(0.1614) = 2.8188 rad
+    \end{aligned}
+\end{equation*}
+
+Convert to degrees:
+\begin{equation*}
+    \begin{aligned}
+    \theta_1 &= 2.8188 rad \times \dfrac{180}{\pi} = 161.5^{\circ}
     \end{aligned}
 \end{equation*}
 
@@ -122,7 +175,14 @@ Contact angle for driven pulley(larger pulley):
 \begin{equation*}
     \begin{aligned}
     \theta_2 &= \pi + 2\alpha\\
-    &= \pi + 2(0.1614) = 3.48 rad
+    &= \pi + 2(0.1614) = 3.4644 rad
+    \end{aligned}
+\end{equation*}
+
+Convert to degrees:
+\begin{equation*}
+    \begin{aligned}
+    \theta_2 &= 3.4644 rad \times \dfrac{180}{\pi} = 198.5^{\circ}
     \end{aligned}
 \end{equation*}
 
